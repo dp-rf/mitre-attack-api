@@ -1,8 +1,9 @@
 from fastapi import FastAPI, HTTPException
 import sqlite3
 import os
+from fastapi.openapi.utils import get_openapi
 
-app = FastAPI()
+app = FastAPI(docs_url="/docs", redoc_url="/redoc")
 
 # Define database path
 DB_PATH = os.path.join(os.path.dirname(__file__), "mitre_attack.db")
